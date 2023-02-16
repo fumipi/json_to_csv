@@ -1,3 +1,3 @@
 # json_to_csv
 
-Streamlitで作った入れ子になったJSONファイルを一気にCSVに変換するWebアプリです。
+Streamlitで作った入れ子になったJSONが沢山入った配列を一気にCSVに変換するWebアプリです。
