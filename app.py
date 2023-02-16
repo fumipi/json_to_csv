@@ -5,7 +5,7 @@ import pandas as pd
 
 st.set_option("deprecation.showfileUploaderEncoding", False)
 st.title("JSONファイルをCSVに変換するアプリ")
-st.write("入り組んだJSONファイルもフラット化してCSVにします")
+st.write("入り組んだJSONファイルが沢山入った配列を、フラット化してCSVにします")
 
 uploaded_file = st.file_uploader("JSONファイルをアップロードしてください", type=['json'])
 if uploaded_file is not None:
