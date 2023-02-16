@@ -9,11 +9,12 @@ st.write("入り組んだJSONファイルもフラット化してCSVにします
 
 uploaded_file = st.file_uploader("JSONファイルをアップロードしてください", type=['json'])
 if uploaded_file is not None:
-    nested_dictionary = json.load(uploaded_file)
-    flattened_data = flatten(nested_dictionary)
-    if type(flattened_data) == list:
-        df = pd.DataFrame(flattened_data)
+    uploaded_data = json.load(uploaded_file)
+    if type(uploaded_data) == list:
+        flattened_list = [flatten(data) for data in uploaded_data ]
+        df = pd.DataFrame(flattened_list)
     else:
+        flattened_data = flatten(uploaded_data)
         df = pd.DataFrame([flattened_data])
     st.write(df.head())
     csv = df.to_csv(index=False).encode('utf-8-sig')
